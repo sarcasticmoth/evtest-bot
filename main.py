@@ -11,10 +11,11 @@ bot = commands.Bot(command_prefix='$')
 
 
 @bot.event
-async def on_ready():
+async def on_ready(ctx):
     print("----------------------")
     print("Logged In As")
     print("Username: {0}".format(client_user))
+    await ctx.send("bot is here")
     print("----------------------")
 
 
@@ -41,5 +42,9 @@ async def pikachu_admin(ctx, *arg):
     else:
         await ctx.send('only Vee can use this command.')
 
+@bot.command(name='imshocked')
+async def pikachu_custom(ctx):
+    await ctx.send("{0} is surprised".format(ctx.author.display_name))
+    await ctx.send(file=discord.File('images/shocked_pikachu.png'))
 
 bot.run(token)
