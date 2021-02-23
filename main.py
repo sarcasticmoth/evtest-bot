@@ -42,9 +42,11 @@ async def pikachu_admin(ctx, *arg):
     else:
         await ctx.send('only Vee can use this command.')
 
+
 @bot.command(name='imshocked')
 async def pikachu_custom(ctx):
     await ctx.send("{0} is surprised".format(ctx.author.display_name))
     await ctx.send(file=discord.File('images/shocked_pikachu.png'))
+
 
 bot.run(token)
